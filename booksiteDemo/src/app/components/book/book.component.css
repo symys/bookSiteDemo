@@ -1,0 +1,15 @@
+.productsTitle{
+    margin-bottom: 50px!important;
+    border-radius: 5px;
+    border: 1px solid rgb(206, 206, 206);
+  }
+  
+  .card img{
+    height: 304px!important;
+  }
+  
+  .container{
+    margin-top: 95px;
+  }
+  
+  
