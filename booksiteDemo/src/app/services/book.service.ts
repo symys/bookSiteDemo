@@ -10,7 +10,7 @@ export class BookService {
 
   constructor(private http: HttpClient) {}
 
-seciliKitap:Book;
+//seciliKitap:Book;
 getBooks(categoryId: number): Observable<Book[]> {
     return this.http.get<Book[]>(this.url + 'books').pipe(
       map((response) => {
@@ -34,6 +34,6 @@ getBooks(categoryId: number): Observable<Book[]> {
 
 
   getBookById(bookId:number): Observable<Book>{
-    return this.http.get<Book>(this.url + 'book-detail/' + bookId)
+    return this.http.get<Book>(this.url + 'detail/' + bookId + '.json')
   }
 }

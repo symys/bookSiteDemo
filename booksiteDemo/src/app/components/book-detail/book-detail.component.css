@@ -1,0 +1,22 @@
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px !important;
+    padding: 62px;
+    display: flex;
+  }
+  
+  .leftSide {
+    width: 65%;
+    position: relative;
+  }
+
+  .leftSide img {
+    width: 30em;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }

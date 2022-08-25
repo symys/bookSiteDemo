@@ -8,7 +8,8 @@ import { CategoryComponent } from './components/category/category.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
-import { DenemeComponent } from './components/deneme/deneme.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import { DenemeComponent } from './components/deneme/deneme.component';
     CategoryComponent,
     NavbarComponent,
     BookDetailComponent,
-    DenemeComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
