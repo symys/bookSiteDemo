@@ -6,8 +6,6 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
-    // su alttaki eklendi
-    // "strictNullChecks": false,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -23,7 +21,10 @@
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    // su alttaki eklendi
+    // "strictNullChecks": false,
+    "strictPropertyInitialization": false,
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

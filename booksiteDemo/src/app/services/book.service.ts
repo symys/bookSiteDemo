@@ -5,35 +5,25 @@ import { Book } from '../models/book'
 
 @Injectable()
 export class BookService {
-  url = 'http://localhost:3000/'
-  url_firebase = 'https://frontend-proje-default-rtdb.firebaseio.com/'
+  url = 'http://localhost:3000/books'
+  // url_firebase = 'https://frontend-proje-default-rtdb.firebaseio.com/'
 
   constructor(private http: HttpClient) {}
 
-//seciliKitap:Book;
 getBooks(categoryId: number): Observable<Book[]> {
-    return this.http.get<Book[]>(this.url + 'books').pipe(
-      map((response) => {
-        const books: Book[] = []
+  let newUrl=this.url;
 
-        for (const key in response) {
-          if (categoryId) {
-            if (categoryId == response[key].categoryId) {
-                books.push({ ...response[key], id: key })
-            }
-          } else {
-            books.push({ ...response[key], id: key })
-          }
-        }
-
-        return books
-      }),
-      tap((data) => console.log(data)),
-    )
+  if(categoryId){
+    newUrl+='?categoryId='+categoryId;
+  }
+  return this.http.get<Book[]>(newUrl)
   }
 
 
-  getBookById(bookId:number): Observable<Book>{
-    return this.http.get<Book>(this.url + 'detail/' + bookId + '.json')
+  getBookById(bookId:number):Observable<Book>{
+    return this.http.get<Book>(this.url+'/'+bookId)
   }
+
+
+  
 }

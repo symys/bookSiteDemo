@@ -10,21 +10,25 @@ import { BookService } from 'src/app/services/book.service';
   providers: [BookService]
 })
 export class BookDetailComponent implements OnInit {
-  book!:Book;
+  book:Book;
 
   constructor(
     private bookService: BookService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
     ) { }
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe(params => {
-      this.bookService
-        .getBookById(params['bookId'])
-        .subscribe((data) => {
+    this.activatedRoute.params.subscribe((params) => {
+      this.bookService.getBookById(params['bookId']).subscribe(
+        (data) => {
           this.book = data
-        })
+        },
+        (error) => {
+          //
+        },
+      )
     })
+
   }
 
 }

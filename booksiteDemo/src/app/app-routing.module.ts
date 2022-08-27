@@ -7,7 +7,9 @@ import { BookComponent } from './components/book/book.component';
 const routes: Routes = [
   { path: "home", component: BookComponent },
   { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: "detail", component: BookDetailComponent},
+  { path: "home/category/:categoryId", component: BookComponent },
+  { path: "books", component: BookComponent },
+  { path: "book/detail/:bookId", component: BookDetailComponent },
 ];
 
 @NgModule({
