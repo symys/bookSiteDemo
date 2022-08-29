@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { HttpClient } from '@angular/common/http';
 import { BookService } from 'src/app/services/book.service';
 import { Book } from 'src/app/models/book';
@@ -15,9 +14,13 @@ import { ActivatedRoute } from '@angular/router';
 export class BookComponent implements OnInit {
   // books$ = this.http.get('http://localhost:3000/books');
   booksTitle:string="Book List"
+  
   books: Book[] = [];
 
- 
+  filteredBooks:Book[] = [];
+
+  filterBooks:string="";
+
 
   constructor( private bookService: BookService,
     private activatedRoute: ActivatedRoute,) { }
@@ -34,6 +37,11 @@ export class BookComponent implements OnInit {
           this.books = data
         })
     })
+  }
+
+  onInputChange() {
+    this.filteredBooks = this.filterBooks ?
+    this.books.filter(p => p.name.toLowerCase().startsWith(this.filterBooks.toLowerCase())) : this.books;
   }
   
 }

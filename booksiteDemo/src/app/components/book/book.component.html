@@ -1,6 +1,14 @@
-<div class="container">
+ <div class="container">
+  <div class="row">
+      <div class="col-3">
+   <app-category></app-category> 
+
+  </div>
+
+  <div class="col-9">
+
     <h2 class="text-center p-3 productsTitle text-white" style="background-color:#487cff">{{booksTitle}}</h2>
-      <div class="row">
+    <div class="row">
         <div *ngFor="let item of books" class="col-lg-3">
           <div class="card mb-3">
             <img class="card-img-top" src="../../../assets/images/{{item.imageUrl}}" alt="Title">
@@ -16,5 +24,77 @@
           </div>
         </div>
       </div>
+  </div>
+  </div>
+
+</div>
+  
+
+
+
+<!--from workshop-->
+<!-- <ng-template #no_products>
+  <div class="container">
+    <div class="alert alert-primary mt-3">No Products Found</div>
+  </div>
+</ng-template>
+
+
+
+<div class="container" *ngIf="books.length>0; else no_products">
+  <div class="row">
+    <div class="col-lg-3">
+      <app-category></app-category>
     </div>
-    
+
+
+
+    <div class="col-lg-9">
+
+      <h4 id="title" class="text-center mt-3 mb-3 p-2 text-white">{{booksTitle | titlecase}}</h4>
+
+      <div id="search" class="my-2 my-lg-0">
+        <input [(ngModel)]="filterBooks" (ngModelChange)="onInputChange()" id="searchInput"
+          class="form-control me-sm-2" type="text" placeholder="Search">
+
+      </div>
+
+      <div class="alert alert-primary mt-3">{{filteredBooks.length}} Products Found</div>
+
+      <ng-template [ngTemplateOutlet]="productList"></ng-template>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+<ng-template #productList>
+
+  <div class="row row-cols-1 row-cols-sm-1 row-cols-md-2 row-cols-xl-3 row-cols-lg-3 g-3 ">
+    <div class="col card productCard" *ngFor="let item of filteredBooks">
+      <img class="card-img-top h-100" src="../../../../assets/images/{{item.imageUrl}}" alt="image">
+
+      <i class="fa fa-heart-o" aria-hidden="true" style="font-size: 25px;"></i>
+
+
+      <button class="sepeteEkle store-item-icon text-capitalize">
+        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+        add to cart
+      </button>
+      <a routerLink="/book/detail/{{item.id}}" class="detayaGit store-item-icon text-capitalize">
+        <i class="fa fa-search" aria-hidden="true"></i>
+        see details
+      </a>
+
+      <div class="card-body">
+        <span class="card-title">{{item.name | titlecase}}</span>
+        <span class="cart-price">{{item.price | currency}}</span>
+      </div>
+    </div>
+  </div>
+
+
+</ng-template>
+-->
