@@ -1,0 +1,28 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+
+    <link rel="stylesheet" 
+          href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<body>
+    <div class="container horizontal-scrollable">
+        <div class="row text-center">
+            <div *ngFor="let item of books" class="col-3 col-xs-4">
+                  <img class="card-img-top card-img" src="../../../assets/images/author.png" alt="Title">
+                  <div class="card-body ">
+                    <p class="author-name">{{item.author}}</p>
+                  </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

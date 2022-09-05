@@ -10,6 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { AuthorDetailComponent } from './components/author-detail/author-detail.component';
+
 
 
 
@@ -20,7 +22,9 @@ import { FormsModule } from '@angular/forms';
     CategoryComponent,
     NavbarComponent,
     BookDetailComponent,
-    FooterComponent
+    FooterComponent,
+    AuthorDetailComponent
+ 
   ],
   imports: [
     BrowserModule,
